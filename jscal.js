@@ -17,6 +17,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                     break;
                 default:
+                    const lastChar = display.innerText.slice(-1);
+                    const operators = ['+','-','*','/'];
+                    if (operators.includes(lastChar)&& operators.includes(value)){
+                        return;
+                    }
                     if (display.innerText === '0') {
                         display.innerText = value;
                     } else {
